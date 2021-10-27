@@ -35,7 +35,7 @@ public class Login extends HttpServlet {
                     if (request.getSession().getAttribute("username") == null) {
                         ConnectMysql connSql = new ConnectMysql();
                         UseMysql mySql = new UseMysql(connSql.conn);
-                        boolean result = mySql.PLogin(username, password);
+                        boolean result = mySql.Login(username, password);
                         System.out.println(result);
                         if (result) {
                             msg = msg + "\"status\":200,\"message\":\"恭喜你： " + username + "，登录成功\"}";
